@@ -37,7 +37,6 @@ class WrappedLayout<T, U> extends Layout<U> {
   layout: Layout<T>;
   decoder: (data: T) => U;
   encoder: (src: U) => T;
-  property?: string;
 
   constructor(
     layout: Layout<T>,
@@ -67,6 +66,7 @@ class WrappedLayout<T, U> extends Layout<U> {
 export class COptionLayout<T> extends Layout<T | null> {
   layout: Layout<T>;
   discriminator: Layout<number>;
+  property?: string;
 
   constructor(layout: Layout<T>, property?: string) {
     super(-1, property);
