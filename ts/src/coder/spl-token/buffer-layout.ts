@@ -37,6 +37,7 @@ class WrappedLayout<T, U> extends Layout<U> {
   layout: Layout<T>;
   decoder: (data: T) => U;
   encoder: (src: U) => T;
+  property?: string;
 
   constructor(
     layout: Layout<T>,
